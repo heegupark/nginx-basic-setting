@@ -1,0 +1,2 @@
+# nginx-basic-setting
+
