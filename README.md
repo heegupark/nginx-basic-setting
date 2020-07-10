@@ -72,7 +72,7 @@ http {
 # http to https redirect
 1. `cd /etc/nginx/sites-available`
 2. `sudo nano [yourappname]`
-3. It should look like this
+3. It should look like this at the very bottom
 ```
 server {
     if ($host = notes.heegu.net) {
