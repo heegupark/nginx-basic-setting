@@ -27,7 +27,7 @@ server {
         }
 }
 ```
-5. `/etc/nginx/sites-enable`
+5. `/etc/nginx/sites-enabled`
 6. `sudo ln -s ../sites-available/[target folder name]`
 6. `sudo service nginx restart`
 
