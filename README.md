@@ -41,12 +41,16 @@ server {
 1. `sudo certbot --nginx`
 
 # pm2 sample
+1. List
+- Check current running instances: `pm2 list`
+2. Start
 - `pm2 start "env-cmd -f config/prod.env node src/app.js”`
 - `pm2 start "/usr/local/bin/node server/index.js”`
-- `pm2 list`
+- Set your name: `pm2 start --name=[yourappname] "node src/app.js`
+3. Delete
 - `pm2 delete [pid]`
 - `pm2 delete [yourappname]`
-- `pm2 start --name=[yourappname] "node src/app.js`
+4. Restart
 - `pm2 restart [pid]`
 - `pm2 restart [yourappname]`
 
@@ -72,7 +76,7 @@ http {
 # http to https redirect
 1. `cd /etc/nginx/sites-available`
 2. `sudo nano [yourappname]`
-3. It should look like this at the very bottom
+3. At the very bottom of the conf file, It should look like this 
 ```
 server {
     if ($host = notes.heegu.net) {
