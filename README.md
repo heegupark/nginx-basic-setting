@@ -69,3 +69,19 @@ http {
 ```
 4. `sudo service nginx reload` or `sudo service nginx restart`
 
+# http to https redirect
+1. `cd /etc/nginx/sites-available`
+2. `sudo nano [yourappname]`
+3. It should look like this
+```
+server {
+    if ($host = notes.heegu.net) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    server_name notes.heegu.net;
+    listen 80;
+    return 404; # managed by Certbot
+}
+```
+4. `sudo service nginx restart`
