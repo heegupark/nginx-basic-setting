@@ -52,5 +52,16 @@ server {
 1. `cd /etc/nginx/`
 2. `sudo nano nginx.conf`
 3. add this `client_max_body_size 10M;` ( if you want to allow up to 10MB)
+4. It will look like this.
+http {
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
+        keepalive_timeout 65;
+        types_hash_max_size 2048;
+        client_max_body_size 10M;
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+}
 4. `sudo service nginx reload` or `sudo service nginx restart`
 
