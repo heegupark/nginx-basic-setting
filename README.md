@@ -1,10 +1,11 @@
 # nginx-basic-setting
+> - Maintained by: `Heegu Park`
 
-# Copy from git repository
+## Copy from git repository
 1. `cd` to go to `/home/ubuntu/`
 2. `git clone [git repository] [target folder name]`
 
-# Configure the nginx config file
+## Configure the nginx config file
 1. `cd /etc/nginx`
 2. `sudo cp default [target folder name]`
 3. `sudo nano [target folder name]`
@@ -30,17 +31,17 @@ server {
 6. `sudo ln -s ../sites-available/[target folder name]`
 6. `sudo service nginx restart`
 
-# https setting
+## https setting
 1. `sudo apt install software-properties-common`
 2. `sudo add-apt-repository universe`
 3. `sudo add-apt-repository ppa:certbot/certbot`
 4. `sudo apt update`
 5. `sudo apt install certbot python3-certbot-nginx`
 
-# certbot renew
+## certbot renew
 1. `sudo certbot --nginx`
 
-# pm2 sample
+## pm2 sample
 1. List
 - Check current running instances: `pm2 list`
 2. Start
@@ -54,7 +55,7 @@ server {
 - `pm2 restart [pid]`
 - `pm2 restart [yourappname]`
 
-# nginx file size limit change
+## nginx file size limit change
 1. `cd /etc/nginx/`
 2. `sudo nano nginx.conf`
 3. add this `client_max_body_size 10M;` ( if you want to allow up to 10MB)
@@ -73,7 +74,7 @@ http {
 ```
 4. `sudo service nginx reload` or `sudo service nginx restart`
 
-# http to https redirect
+## http to https redirect
 1. `cd /etc/nginx/sites-available`
 2. `sudo nano [yourappname]`
 3. At the very bottom of the conf file, It should look like this 
