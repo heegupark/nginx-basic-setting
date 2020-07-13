@@ -1,6 +1,9 @@
 # nginx-basic-setting
 > - Maintained by: `Heegu Park`
 
+## Access to a server(AWS)
+- `ssh -i ~/[your key to access the server] [server username]@[server IP or hostname]`
+
 ## Copy from git repository
 1. `cd` to go to `/home/ubuntu/`
 2. `git clone [git repository] [target folder name]`
