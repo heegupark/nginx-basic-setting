@@ -32,7 +32,8 @@ server {
 ```
 5. `/etc/nginx/sites-enabled`
 6. `sudo ln -s ../sites-available/[target folder name]`
-6. `sudo service nginx restart`
+7. [for testing your setting] `sudo nginx -t`
+8. `sudo service nginx restart`
 
 ## https setting
 1. `sudo apt install software-properties-common`
