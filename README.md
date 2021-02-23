@@ -81,16 +81,32 @@ http {
 ## http to https redirect
 1. `cd /etc/nginx/sites-available`
 2. `sudo nano [yourappname]`
-3. At the very bottom of the conf file, It should look like this 
+3. At the very bottom of the conf file, it should look like this 
 ```
 server {
     if ($host = notes.heegu.net) {
         return 301 https://$host$request_uri;
-    } # managed by Certbot
+    } 
 
     server_name notes.heegu.net;
     listen 80;
-    return 404; # managed by Certbot
+    return 404; 
 }
+```
+4. `sudo service nginx restart`
+
+## non-www to www redirect
+1. `cd /etc/nginx/sites-available`
+2. `sudo nano [yourappname]`
+3. At the very bottom of the conf file, add these lines. 
+```
+server {
+        if ($host = heegu.net) {
+                return 301 https://www.heegu.net$request_uri;
+        }
+        server_name heegu.net;
+        listen 80;
+}
+
 ```
 4. `sudo service nginx restart`
